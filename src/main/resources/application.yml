@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${db.jdbcurl}
+    hikari:
+      username: ${db.username}
+      password: ${db.password}
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+#graphql:
+#  servlet:
+#    mapping: /api

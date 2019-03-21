@@ -1,0 +1,26 @@
+type User {
+    login: String!
+    id: Int!
+    name: String
+    departmentId: Int!
+}
+
+type Department {
+    id: Int!
+    code: String!
+    name: String
+    users: [User]
+}
+
+type Query {
+    userList(first: Int, last: Int): [User]
+    users: [User]
+    user(id: Int!): User
+    department(id: Int!): Department
+    departments: [Department]
+}
+
+type Mutation {
+    createUser(login: String!, name: String, departmentId: Int!): User
+    updateUser(id: Int!, login: String!, name: String, departmentId: Int!): User
+}
